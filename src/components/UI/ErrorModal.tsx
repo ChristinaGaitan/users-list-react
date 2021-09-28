@@ -5,12 +5,13 @@ import classes from './ErrorModal.module.css'
 interface Props {
   title: string
   message: string
+  onConfirm: () => void
 }
 
 const ErrorModal = (props: Props) => {
   return(
     <div>
-      <div className={classes.backdrop}>
+      <div className={classes.backdrop} onClick={props.onConfirm}>
         <Card className={classes.modal}>
           <header className={classes.header}>
             <h2>{props.title}</h2>
@@ -19,7 +20,7 @@ const ErrorModal = (props: Props) => {
             <p>{props.message}</p>
           </div>
           <footer className={classes.actions}>
-            <Button>Okay</Button>
+            <Button onClick={props.onConfirm}>Okay</Button>
           </footer>
         </Card>
       </div>
