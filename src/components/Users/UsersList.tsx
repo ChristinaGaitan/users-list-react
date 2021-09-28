@@ -1,7 +1,8 @@
 import Card from '../UI/Card'
 import classes from './UsersList.module.css'
 
-interface User {
+export interface User {
+  id: string
   name: string
   age: string
 }
@@ -15,7 +16,9 @@ const UsersList = (props: Props) => {
     <Card className={classes.users}>
       <ul>
         {props.users.map((user: User) => {
-          <li>{user.name} ({user.age} years old)</li>
+          return(
+            <li key={user.id}>{user.name} ({user.age} years old)</li>
+          )
         })}
       </ul>
     </Card>
