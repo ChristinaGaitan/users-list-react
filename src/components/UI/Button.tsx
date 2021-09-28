@@ -1,7 +1,10 @@
+import { ButtonHTMLAttributes } from 'react';
 import classes from './Button.module.css'
 
+type ButtonTypes = (Pick<ButtonHTMLAttributes<HTMLButtonElement>, "type">)["type"]
+
 interface Props {
-  type?: "button" | "submit" | "reset" | undefined
+  type?: ButtonTypes
   onClick?: () => void
   children: any
 }
