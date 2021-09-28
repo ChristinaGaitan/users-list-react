@@ -3,11 +3,11 @@ import classes from './Button.module.css'
 
 type ButtonTypes = (Pick<ButtonHTMLAttributes<HTMLButtonElement>, "type">)["type"]
 
-interface Props {
-  type?: ButtonTypes
-  onClick?: () => void
-  children: any
-}
+  interface Props {
+    type?: ButtonTypes
+    onClick?: () => void
+    children: any
+  }
 
 const Button = (props: Props) => {
   return (
